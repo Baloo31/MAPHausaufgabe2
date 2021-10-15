@@ -8,6 +8,21 @@ public class Benutzer {
     private String nachName;
     private List<Sport> sports;
 
+    public Benutzer(String vorname, String nachname, List<Sport> sports){
+        this.vorName = vorname;
+        this.nachName = nachname;
+        this.sports = sports;
+    }
+
+    @Override
+    public String toString() {
+        return "Benutzer{" +
+                "vorName='" + vorName + '\'' +
+                ", nachName='" + nachName + '\'' +
+                ", sports=" + sports +
+                '}';
+    }
+
     public double kalkuliereZeit(){
         double ganzeZeit = 0;
         for (Sport sport : sports){
