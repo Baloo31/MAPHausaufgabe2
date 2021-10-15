@@ -8,6 +8,9 @@ public class Benutzer {
     private String nachName;
     private List<Sport> sports;
 
+    /*
+        Constructor
+     */
     public Benutzer(String vorname, String nachname, List<Sport> sports){
         this.vorName = vorname;
         this.nachName = nachname;
@@ -23,6 +26,12 @@ public class Benutzer {
                 '}';
     }
 
+
+    /*
+    - Kalkuliert die Zeit die ein Benutzer braucht fur treiben seiner Lieblingssports
+    Pre: Ein Benutzer mit seiner Liste von Lieblingssports
+    Post: Die Zeit die er braucht
+     */
     public double kalkuliereZeit(){
         double ganzeZeit = 0;
         for (Sport sport : sports){
@@ -31,10 +40,23 @@ public class Benutzer {
         return ganzeZeit;
     }
 
+
+    /*
+    - Kalkuliert die Zeit die man fur ein bestimmten Sport braucht
+    Pre: Ein Benutzer und ein Sport
+    Post: Die Zeit die man fur dieses Sport braucht
+     */
     public double kalkuliereZeit(Sport sport){
         return sport.kalkuliereZeit();
     }
 
+
+    /*
+    - Kalkuliert den Durchschnittliche Zeit der Sports aus einer Liste
+    Pre: Eun Benutzer mit seine Lieblingssports
+    Post: Die Durchschnittzeit der Sports aus dieser Liste
+    Throws: Wenn der Benutzer keine Lieblingssports hat
+     */
     public double kalkuliereDurchschnittzeit() throws Exception {
         double ganzeZeit = this.kalkuliereZeit();
         if (sports.isEmpty()){
