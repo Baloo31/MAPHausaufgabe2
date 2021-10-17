@@ -1,4 +1,4 @@
-package Tests;
+package com.company;
 
 import Sports.Leichtathletik.Hindernislauf;
 import Sports.Leichtathletik.Hochsprung;
