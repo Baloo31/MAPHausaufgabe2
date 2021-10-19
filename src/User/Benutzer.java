@@ -1,15 +1,27 @@
+/**
+ * Benutzer
+ *
+ * Lieblingssports Time Management
+ *
+ * 19.10.2021
+ */
+
 package User;
 
 import Sports.Sport;
 import java.util.List;
 
 public class Benutzer {
+
     private String vorName;
     private String nachName;
     private List<Sport> sports;
 
-    /*
-        Constructor
+    /**
+     * Constructor
+     * @param vorname Vorname einer Benutzer
+     * @param nachname Nachname einer Benutzer
+     * @param sports Liste von Lieblingssports einer Benutzer
      */
     public Benutzer(String vorname, String nachname, List<Sport> sports){
         this.vorName = vorname;
@@ -17,6 +29,10 @@ public class Benutzer {
         this.sports = sports;
     }
 
+    /**
+     * String Method
+     * @return string einer Instanz von Benutzer
+     */
     @Override
     public String toString() {
         return "Benutzer{" +
@@ -26,11 +42,9 @@ public class Benutzer {
                 '}';
     }
 
-
-    /*
-    - Kalkuliert die Zeit die ein Benutzer braucht fur treiben seiner Lieblingssports
-    Pre: Ein Benutzer mit seiner Liste von Lieblingssports
-    Post: Die Zeit die er braucht
+    /**
+     * Kalkuliert die Zeit die ein Benutzer braucht fur treiben seiner Lieblingssports
+     * @return Die Zeit die er braucht
      */
     public double kalkuliereZeit(){
         double ganzeZeit = 0;
@@ -40,22 +54,19 @@ public class Benutzer {
         return ganzeZeit;
     }
 
-
-    /*
-    - Kalkuliert die Zeit die man fur ein bestimmten Sport braucht
-    Pre: Ein Benutzer und ein Sport
-    Post: Die Zeit die man fur dieses Sport braucht
+    /**
+     * Kalkuliert die Zeit die man fur ein bestimmten Sport braucht
+     * @param sport Ein konkreter Sport
+     * @return Die Zeit die man fur dieses Sport braucht
      */
     public double kalkuliereZeit(Sport sport){
         return sport.kalkuliereZeit();
     }
 
-
-    /*
-    - Kalkuliert den Durchschnittliche Zeit der Sports aus einer Liste
-    Pre: Eun Benutzer mit seine Lieblingssports
-    Post: Die Durchschnittzeit der Sports aus dieser Liste
-    Throws: Wenn der Benutzer keine Lieblingssports hat
+    /**
+     * Kalkuliert den Durchschnittliche Zeit der Sports aus einer Liste
+     * @return Die Durchschnittzeit der Sports aus dieser Liste
+     * @throws Exception Wenn der Benutzer keine Lieblingssports hat
      */
     public double kalkuliereDurchschnittzeit() throws Exception {
         double ganzeZeit = this.kalkuliereZeit();
@@ -65,26 +76,50 @@ public class Benutzer {
         return ganzeZeit / sports.size();
     }
 
+    /**
+     * Getter fur Nachname
+     * @return Nachname des Benutzers
+     */
     public String getNachName() {
         return nachName;
     }
 
+    /**
+     * Getter fur Vorname
+     * @return Vorname des Benutzers
+     */
     public String getVorName() {
         return vorName;
     }
 
+    /**
+     * Getter fur die Liste von Lieblingssports
+     * @return Liste von Lieblingssports des Benutzers
+     */
     public List<Sport> getSport() {
         return sports;
     }
 
+    /**
+     * Setter fur die Nachname des Benutzers
+     * @param nachName Neuer Nachname
+     */
     public void setNachName(String nachName) {
         this.nachName = nachName;
     }
 
+    /**
+     * Setter fur die Vorname des Benutzers
+     * @param vorName Neuer Vorname
+     */
     public void setVorName(String vorName) {
         this.vorName = vorName;
     }
 
+    /**
+     * Setter fur die Liste von Lieblingssports
+     * @param sport Neue Liste von Lieblingssports
+     */
     public void setSport(List<Sport> sport) {
         this.sports = sport;
     }

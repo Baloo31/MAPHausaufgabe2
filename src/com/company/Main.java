@@ -1,3 +1,9 @@
+/**
+ * Main
+ *
+ * 19.10.2021
+ */
+
 package com.company;
 
 import Sports.Leichtathletik.Hochsprung;
