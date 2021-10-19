@@ -17,7 +17,12 @@ public class Main {
         Sport hochsprung = new Hochsprung();
 
         // Ein Benutzer
-        Benutzer benutzer = new Benutzer("Andrei","Balu",Arrays.asList(fussball, hochsprung));
+        Benutzer benutzer = new Benutzer("x","y",Arrays.asList(fussball, hochsprung));
+        benutzer.setNachName("Balu");
+        benutzer.setVorName("Andrei");
+        System.out.println("User: " + benutzer.getNachName() + ' ' + benutzer.getVorName());
+        System.out.println(benutzer);
+
 
         // Durchschnittzeit fur treiben der Sports aus seiner Stundenplan
         try{
